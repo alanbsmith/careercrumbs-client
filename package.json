@@ -1,0 +1,23 @@
+{
+  "name": "careercrumbs-client",
+  "version": "0.0.1",
+  "description": "Career Crumbs client-side application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/careercrumbs/careercrumbs-client.git"
+  },
+  "author": "Marc Garreau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/careercrumbs/careercrumbs-client/issues"
+  },
+  "homepage": "https://github.com/careercrumbs/careercrumbs-client",
+  "devDependencies": {
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.0"
+  }
+}
