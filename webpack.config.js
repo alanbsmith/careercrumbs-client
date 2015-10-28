@@ -1,3 +1,5 @@
+/* eslint-disable no-var */
+
 var webpack = require('webpack');
 
 module.exports = {
@@ -7,11 +9,24 @@ module.exports = {
     './src/index.js'
   ],
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loader: 'react-hot!babel'
-    }]
+    preLoaders: [
+      {
+        test: /\.js$/,
+        exclude: [/node_modules/],
+        loader: 'eslint-loader'
+      }
+    ],
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'react-hot!babel'
+      }
+    ]
+  },
+  eslint: {
+    failOnWarning: false,
+    failOnError: false,
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
