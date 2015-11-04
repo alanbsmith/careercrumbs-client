@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import App from './App';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from '../reducers';
-
-const store = createStore(rootReducer);
+import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
 
 const Root = React.createClass({
   displayName: 'Root',
 
   render() {
     return (
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <div>
+        <Provider store={this.props.store}>
+          <App />
+        </Provider>
+        <DebugPanel top right bottom>
+          <DevTools store={this.props.store} monitor={LogMonitor} />
+        </DebugPanel>
+      </div>
     );
   }
 });
+
+Root.propTypes = {
+  store: PropTypes.object.isRequired
+};
 
 export default Root;
