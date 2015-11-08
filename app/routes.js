@@ -6,9 +6,7 @@ import DiscoveryPage from './containers/DiscoveryPage';
 
 export default (
   <Route path="/" component={App}>
-    <Route path="discovery"
-           component={DiscoveryPage} />
-    <Route path="questions"
-           component={QuestionsPage} />
+    <Route path="discovery" component={DiscoveryPage} />
+    <Route path="questions" component={QuestionsPage} />
   </Route>
 );
