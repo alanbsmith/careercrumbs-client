@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import App from './App';
 import { Provider } from 'react-redux';
+import { ReduxRouter } from 'redux-router';
 import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
 
 const Root = React.createClass({
@@ -10,7 +10,7 @@ const Root = React.createClass({
     return (
       <div>
         <Provider store={this.props.store}>
-          <App />
+          <ReduxRouter />
         </Provider>
         <DebugPanel top right bottom>
           <DevTools store={this.props.store} monitor={LogMonitor} />

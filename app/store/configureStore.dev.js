@@ -1,8 +1,12 @@
 import { createStore, compose } from 'redux';
+import { reduxReactRouter } from 'redux-router';
 import { devTools } from 'redux-devtools';
+import { createHistory } from 'history';
+import routes from '../routes';
 import rootReducer from '../reducers';
 
 const finalCreateStore = compose(
+  reduxReactRouter({ routes, createHistory }),
   devTools()
 )(createStore);
 

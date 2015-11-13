@@ -6,9 +6,8 @@ var path = require('path');
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    './index.js'
+    'webpack-hot-middleware/client',
+    './index'
   ],
   module: {
     preLoaders: [
@@ -22,7 +21,8 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'react-hot!babel'
+        loader: 'react-hot!babel',
+        include: __dirname
       }
     ]
   },
@@ -34,7 +34,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   output: {
-    path: path.join('../', __dirname, '/dist'),
+    path: path.join(__dirname, '..', '/dist'),
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -43,6 +43,8 @@ module.exports = {
     hot: true
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ]
 }
