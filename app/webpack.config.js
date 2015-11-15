@@ -23,6 +23,22 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'react-hot!babel',
         include: __dirname
+      },
+      {
+        test   : /\.woff|\.woff2|\.svg|.eot|\.ttf/,
+        loader : 'url?prefix=font/&limit=10000'
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass'
+      },
+      {
+        test: /\.png/,
+        loader: "url-loader?limit=100000&minetype=image/png"
+      },
+      {
+        test: /\.jpg/,
+        loader: "file-loader"
       }
     ]
   },
