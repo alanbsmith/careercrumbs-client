@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect, pushState } from 'react-redux';
+import Navbar from './Navbar.js';
 
 import '../assets/stylesheets/_bootstrap.scss';
 
@@ -9,7 +10,7 @@ const App = React.createClass({
   render() {
     return (
       <div>
-        Hi Will and Alan!
+        <Navbar />
         {this.props.children}
       </div>
     );
