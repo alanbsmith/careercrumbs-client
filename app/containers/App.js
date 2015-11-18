@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect, pushState } from 'react-redux';
-import Navbar from './Navbar.js';
+import Navbar from '../components/Navbar.js';
 
 import '../assets/stylesheets/_bootstrap.scss';
 
