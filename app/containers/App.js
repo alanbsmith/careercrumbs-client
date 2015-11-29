@@ -17,12 +17,12 @@ const App = React.createClass({
   }
 });
 
-function select(state) {
-  return state;
-}
-
 App.propTypes = {
   children: PropTypes.node
 };
+
+function select(state) {
+  return state;
+}
 
 export default connect(select, { pushState })(App);

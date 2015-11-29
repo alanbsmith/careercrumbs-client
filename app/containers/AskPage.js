@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { askQuestion } from '../actions/actions';
 
@@ -32,6 +32,10 @@ const AskPage = React.createClass({
     );
   }
 });
+
+AskPage.propTypes = {
+  dispatch: PropTypes.func.isRequired
+};
 
 function mapStateToProps(state) {
   return state;

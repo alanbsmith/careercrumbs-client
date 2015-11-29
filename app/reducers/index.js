@@ -1,11 +1,6 @@
 import { combineReducers } from 'redux';
 import { routerStateReducer as router } from 'redux-router';
 
-const rootReducer = combineReducers({
-  questions,
-  router
-});
-
 function questions(state = { questions: [] }, action) {
   if (action.type === 'ASK_QUESTION') {
     return Object.assign({}, state, {
@@ -15,5 +10,10 @@ function questions(state = { questions: [] }, action) {
 
   return state;
 }
+
+const rootReducer = combineReducers({
+  questions,
+  router
+});
 
 export default rootReducer;
