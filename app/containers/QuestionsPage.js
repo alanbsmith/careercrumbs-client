@@ -6,7 +6,7 @@ const QuestionsPage = React.createClass({
   displayName: 'QuestionsPage',
 
   render() {
-    const questions = this.props.questions.questions.map(function(question, index) {
+    const questions = this.props.questions.map(function(question, index) {
       return <Question key={index} title={question.title} body={question.body} />;
     });
 
