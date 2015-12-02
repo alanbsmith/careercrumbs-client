@@ -12,13 +12,13 @@ describe('questions reducer', () => {
     }
     const nextState = rootReducer(initialState, action);
     expect(nextState).to.include.keys('questions', 'router');
-    expect(nextState.questions).to.deep.equal({
-      questions: [
+    expect(nextState.questions).to.deep.equal(
+      [
         {
           title: 'How do you herd goats?',
           body: 'Asking for a friend'
         }
       ]
-    });
+    );
   });
 });

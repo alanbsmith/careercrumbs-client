@@ -1,9 +1,14 @@
 import React, { PropTypes } from 'react';
-import { connect, pushState } from 'react-redux';
+import { connect } from 'react-redux';
 import Question from '../components/Question';
+import { fetchQuestions } from '../actions/actions';
 
 const QuestionsPage = React.createClass({
   displayName: 'QuestionsPage',
+
+  componentDidMount() {
+    this.props.dispatch(fetchQuestions());
+  },
 
   render() {
     const questions = this.props.questions.map(function(question, index) {
@@ -19,11 +24,12 @@ const QuestionsPage = React.createClass({
 });
 
 QuestionsPage.propTypes = {
-  questions: PropTypes.object
+  questions: PropTypes.object,
+  dispatch: PropTypes.func.isRequired
 };
 
 function select(state) {
   return state;
 }
 
-export default connect(select, { pushState })(QuestionsPage);
+export default connect(select)(QuestionsPage);
