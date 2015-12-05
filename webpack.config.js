@@ -7,7 +7,7 @@ module.exports = {
   devtool: 'inline-source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './index'
+    './app/index'
   ],
   module: {
     preLoaders: [
@@ -50,12 +50,12 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   output: {
-    path: path.join(__dirname, '..', '/dist'),
+    path: path.join(__dirname, '/dist'),
     publicPath: '/',
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: '../dist',
+    contentBase: './dist',
     hot: true
   },
   plugins: [

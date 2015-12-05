@@ -36,10 +36,10 @@ rules:
   # Possible Errors
   comma-dangle: [2, 'never']
   # no-cond-assign?
-  no-console: 2
+  no-console: 1
   # no-constant-condition?
   no-control-regex: 2
-  no-debugger: 2
+  no-debugger: 1
   no-dupe-args: 2
   no-dupe-keys: 2
   no-duplicate-case: 2
@@ -204,7 +204,7 @@ rules:
   react/no-did-update-set-state: 2
   react/no-multi-comp: 0 # TODO: 2?
   react/no-unknown-property: 2
-  react/prop-types: 2 # TODO: ignore className?
+  react/prop-types: 1 # TODO: ignore className?
   react/react-in-jsx-scope: 2
   react/self-closing-comp: 2
   react/sort-comp: 0 # TODO: 2
