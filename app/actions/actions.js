@@ -11,10 +11,11 @@ export function askQuestion({ title, body }) {
 export function fetchQuestions() {
   return dispatch => {
     dispatch(requestQuestions());
-    get(`http://api.lvh.me:2020/v1/questions`)
+    get(`/v1/questions`)
     .type('application/json')
     .accept('application/json')
     .end(function(err, res) {
+      console.log('response: ', err)
       if (res.ok) {
         dispatch(receiveQuestions(res.body));
       } else {
